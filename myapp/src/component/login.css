@@ -1,0 +1,31 @@
+.scarpim-logo {
+    position: absolute;
+    width: 280px;
+    height: 100px;
+    margin: auto;
+    top: 35%;
+}
+
+.container-logo {
+    background-color: #861A16;
+}
+
+body {
+    background-color: #fff;
+}
+
+.logo-canto {
+    position: relative;
+    left: 0px;
+    width: 100px;
+    background-color: #861A16;
+}
+
+.card-white {
+    width: 100%;
+}
+
+.token {
+    font-size: 12px;
+}
+
