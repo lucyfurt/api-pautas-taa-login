@@ -6,6 +6,7 @@ import { Switch, Route, Redirect, BrowserRouter } from 'react-router-dom';
 import Login from '../component/login';
 import Cadastrar from '../component/cadastrar';
 import Logado from '../component/logado';
+import Form from '../component/form';
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
   <Route {...rest}
@@ -23,6 +24,7 @@ const RouteLogin = () => (
     <Switch>
       <Route exact path="/login" component={Login} />
       <Route exact path="/cadastro" component={Cadastrar} />
+      <Route exact path="/form" component={Form} />
       <PrivateRoute exact path="/" component={Logado} />
     </Switch>
   </ BrowserRouter>

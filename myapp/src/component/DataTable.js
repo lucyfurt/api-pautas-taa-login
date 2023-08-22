@@ -1,54 +1,67 @@
-import React from 'react';
-import { useTable } from 'react-table';
-//COLOCAR OS CAMPOS CORRESPONDENES DO FORM PAUTA SHOW /ESPETACULOS
-const DataTable = ({ data }) => {
-  // Defina as colunas da tabela
-  const columns = [
-    { Header: 'ID', accessor: '_id' },
-    { Header: 'Nome', accessor: 'nome' },
-    { Header: 'Email', accessor: 'email' },
-    // Adicione mais colunas conforme necessário
-  ];
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import '../component/dataTables.css'
 
-  // Configurar a tabela usando o react-table
-  const {
-    getTableProps,
-    getTableBodyProps,
-    headerGroups,
-    rows,
-    prepareRow,
-  } = useTable({
-    columns,
-    data,
-  });
+function App() {
+  const [users, setUsers] = useState([]);
+
+  const fetchUsers = async () => {
+    try {
+     
+      const response = await axios.get('http://localhost:3007/api/v1/users/');
+      setUsers(response.data);
+    } catch (error) {
+      console.error('Error fetching users:', error);
+    }
+  };
+
+  useEffect(() => {
+    fetchUsers();
+  }, []);
+
+  const deleteUser = async userId => {
+    try {
+      console.log('Deleting user with ID:', userId);
+      
+      const response = await axios.delete(`http://localhost:3007/api/v1/users/${userId}`);
+      console.log('Response:', response);
+  
+      if (response.status === 200) {
+        fetchUsers(); // Refresh the user list after deletion
+      }
+    } catch (error) {
+      console.error('Error deleting user:', error);
+    }
+  };
+  
 
   return (
-    <table {...getTableProps()} className="table">
-      <thead>
-        {headerGroups.map(headerGroup => (
-          <tr {...headerGroup.getHeaderGroupProps()}>
-            {headerGroup.headers.map(column => (
-              <th {...column.getHeaderProps()}>{column.render('Header')}</th>
-            ))}
+    <div className="App">
+      <h1>Shows/Espetáculos</h1>
+      <table>
+        <thead>
+          <tr>
+            <th>Username</th>
+            <th>Lastname</th>
+            <th>Email</th>
+            <th>Ações</th>
           </tr>
-        ))}
-      </thead>
-      <tbody {...getTableBodyProps()}>
-        {rows.map(row => {
-          prepareRow(row);
-          return (
-            <tr {...row.getRowProps()}>
-              {row.cells.map(cell => {
-                return (
-                  <td {...cell.getCellProps()}>{cell.render('Cell')}</td>
-                );
-              })}
+        </thead>
+        <tbody>
+          {users.map(user => (
+            <tr key={user._id}>
+              <td>{user.username}</td>
+              <td>{user.lastname}</td>
+              <td>{user.email}</td>
+              <td>
+                <button onClick={() => deleteUser(user._id)}>Delete</button>
+              </td>
             </tr>
-          );
-        })}
-      </tbody>
-    </table>
+          ))}
+        </tbody>
+      </table>
+    </div>
   );
-};
+}
 
-export default DataTable;
+export default App;
