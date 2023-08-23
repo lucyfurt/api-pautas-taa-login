@@ -7,6 +7,7 @@ import Login from '../component/login';
 import Cadastrar from '../component/cadastrar';
 import Logado from '../component/logado';
 import Form from '../component/form';
+import FormEspetaculo from '../component/formEspetaculo';
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
   <Route {...rest}
@@ -25,6 +26,7 @@ const RouteLogin = () => (
       <Route exact path="/login" component={Login} />
       <Route exact path="/cadastro" component={Cadastrar} />
       <Route exact path="/form" component={Form} />
+      <Route exact path="/formEspetaculo" component={FormEspetaculo}/>
       <PrivateRoute exact path="/" component={Logado} />
     </Switch>
   </ BrowserRouter>

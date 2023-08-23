@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { useTable } from 'react-table';
 import Logo from '../temp/logo';
-import DataTable from './DataTable'; 
+import DataTable from './dataEspetaculos'; 
 import './login.css';
 //teste git
 export default class Logado extends Component {
@@ -16,7 +15,7 @@ export default class Logado extends Component {
   componentDidMount() {
     const token = localStorage.getItem('@guarda-local/token');
     if (token !== null) {
-      axios.get('http://localhost:3007/api/v1/users/') // Substitua pela rota correta da sua API
+      axios.get('http://localhost:3007/api/v1/espetaculos/') // Substitua pela rota correta da sua API
         .then(response => {
           this.setState({ data: response.data }); // Armazene os dados no estado
         })
