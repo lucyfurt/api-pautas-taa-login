@@ -12,9 +12,15 @@ class App extends Component {
                     </ul>
                 </div>
                 <div className="body">
-                    <h1>Pedido de Pautas</h1>
-                    <a href='/formEspetaculo'><button>PEDIDO DE PAUTAS - SHOW/ESPETÁCULOS</button></a>
-                    <a href='#'><button>PEDIDO DE PAUTAS - FOTOGRAFIAS</button></a>
+                    <h1 className="main-heading">Pedido de Pautas</h1>
+                    <div className="button-container">
+                        <a className="custom-button" href='/formEspetaculo'>
+                            PEDIDO DE PAUTAS - SHOW/ESPETÁCULOS
+                        </a>
+                        <a className="custom-button" href='#'>
+                            PEDIDO DE PAUTAS - FOTOGRAFIAS
+                        </a>
+                    </div>
                 </div>
             </div>
         );

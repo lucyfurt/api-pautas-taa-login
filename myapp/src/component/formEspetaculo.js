@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-
+import './formEspetaculo.css'
 const FormEspetaculo = () => {
   const [formData, setFormData] = useState({
     razao: '',
@@ -39,11 +39,11 @@ const FormEspetaculo = () => {
   };
 
   return (
-    <div>
-      <h2>Formulário Shows/Espetáculos</h2>
+    <div className="form-container">
+      <h2 className="form-heading">Formulário Shows/Espetáculos</h2>
       <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="razao">Razão Social:</label>
+      <div className="form-group">
+          <label htmlFor="razao" className="form-label">Razão Social:</label>
           <input
             type="text"
             id="razao"
@@ -53,7 +53,7 @@ const FormEspetaculo = () => {
           />
         </div>
         <div>
-          <label htmlFor="email">Email:</label>
+          <label htmlFor="email" className="form-label">Email:</label>
           <input
             type="email"
             id="email"
@@ -63,7 +63,7 @@ const FormEspetaculo = () => {
           />
         </div>
         <div>
-          <label htmlFor="cnpj">Cnpj:</label>
+          <label htmlFor="cnpj" className="form-label">Cnpj:</label>
           <input
             type="text"
             id="cnpj"
@@ -73,7 +73,7 @@ const FormEspetaculo = () => {
           />
         </div>
         <div>
-          <label htmlFor="responsavel">Nome do Responsável:</label>
+          <label htmlFor="responsavel" className="form-label">Nome do Responsável:</label>
           <input
             type="text"
             id="responsavel"
@@ -83,7 +83,7 @@ const FormEspetaculo = () => {
           />
         </div>
         <div>
-          <label htmlFor="rgresponsavel">RG do Responsável:</label>
+          <label htmlFor="rgresponsavel" className="form-label">RG do Responsável:</label>
           <input
             type="text"
             id="rgresponsavel"
@@ -93,7 +93,7 @@ const FormEspetaculo = () => {
           />
         </div>
         <div>
-          <label htmlFor="cpfresponsavel">CPF do Responsável:</label>
+          <label htmlFor="cpfresponsavel" className="form-label">CPF do Responsável:</label>
           <input
             type="text"
             id="cpfresponsavel"
@@ -103,7 +103,7 @@ const FormEspetaculo = () => {
           />
         </div>
         <div>
-          <label htmlFor="enderecoresponsavel">Endereço do Responsável:</label>
+          <label htmlFor="enderecoresponsavel" className="form-label">Endereço do Responsável:</label>
           <input
             type="text"
             id="enderecoresponsavel"
@@ -113,7 +113,7 @@ const FormEspetaculo = () => {
           />
         </div>
         <div>
-          <label htmlFor="telefone">Telefone:</label>
+          <label htmlFor="telefone" className="form-label">Telefone:</label>
           <input
             type="text"
             id="telefone"
@@ -123,7 +123,7 @@ const FormEspetaculo = () => {
           />
         </div>
         <div>
-          <label htmlFor="nomeevento">Nome do evento:</label>
+          <label htmlFor="nomeevento" className="form-label">Nome do evento:</label>
           <input
             type="text"
             id="nomeevento"
@@ -133,7 +133,7 @@ const FormEspetaculo = () => {
           />
         </div>
         <div>
-          <label htmlFor="formato">Formato:</label>
+          <label htmlFor="formato" className="form-label">Formato:</label>
           <input
             type="text"
             id="formato"
@@ -143,7 +143,7 @@ const FormEspetaculo = () => {
           />
         </div>
         <div>
-          <label htmlFor="select">Select:</label>
+          <label htmlFor="select" className="form-label">Select:</label>
           <input
             type="text"
             id="select"
@@ -153,7 +153,7 @@ const FormEspetaculo = () => {
           />
         </div>
         <div>
-          <label htmlFor="horariodata">Data e Horário:</label>
+          <label htmlFor="horariodata" className="form-label">Data e Horário:</label>
           <input
             type="text"
             id="horariodata"
@@ -163,7 +163,7 @@ const FormEspetaculo = () => {
           />
         </div>
         <div>
-          <label htmlFor="descricao">Descrição do evento:</label>
+          <label htmlFor="descricao" className="form-label">Descrição do evento:</label>
           <input
             type="text"
             id="descricao"
@@ -173,7 +173,7 @@ const FormEspetaculo = () => {
           />
         </div>
 
-        <button type="submit">Enviar</button>
+        <button type="submit" className="form-submit">Enviar</button>
       </form>
     </div>
   );
