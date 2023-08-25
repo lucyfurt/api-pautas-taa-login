@@ -3,9 +3,15 @@ import axios from 'axios';
 
 const Form = () => {
   const [formData, setFormData] = useState({
-    username: '',
-    lastname: '',
-    email: ''
+    nome: '',
+    email: '',
+    cpf: '',
+    rg: '',
+    endereco: '',
+    telefone: '',
+    faculdade: '',
+    curso: '',
+    quant: '',
   });
 
   const handleChange = (e) => {
@@ -20,8 +26,8 @@ const Form = () => {
     e.preventDefault();
     
     try {
-      const response = await axios.post('http://localhost:3007/api/v1/users/', formData);
-      console.log(response.data); // Assuming the server returns some data upon successful submission
+      const response = await axios.post('http://localhost:3007/api/v1/fotografias/', formData);
+      console.log(response.data); 
     } catch (error) {
       console.error('Error submitting form:', error);
     }
@@ -29,25 +35,15 @@ const Form = () => {
 
   return (
     <div>
-      <h2>Submit Form</h2>
+      <h2>Formulário - Fotografias</h2>
       <form onSubmit={handleSubmit}>
         <div>
-          <label htmlFor="username">Username:</label>
+          <label htmlFor="nome">Nome:</label>
           <input
             type="text"
-            id="username"
-            name="username"
-            value={formData.username}
-            onChange={handleChange}
-          />
-        </div>
-        <div>
-          <label htmlFor="lastname">Lastname:</label>
-          <input
-            type="text"
-            id="lastname"
-            name="lastname"
-            value={formData.lastname}
+            id="nome"
+            name="nome"
+            value={formData.nome}
             onChange={handleChange}
           />
         </div>
@@ -58,6 +54,76 @@ const Form = () => {
             id="email"
             name="email"
             value={formData.email}
+            onChange={handleChange}
+          />
+        </div>
+        <div>
+          <label htmlFor="cpf">CPF:</label>
+          <input
+            type="text"
+            id="cpf"
+            name="cpf"
+            value={formData.cpf}
+            onChange={handleChange}
+          />
+        </div>
+        <div>
+          <label htmlFor="rg">RG:</label>
+          <input
+            type="text"
+            id="rg"
+            name="rg"
+            value={formData.rg}
+            onChange={handleChange}
+          />
+        </div>
+        <div>
+          <label htmlFor="endereco">Endereço:</label>
+          <input
+            type="text"
+            id="endereco"
+            name="endereco"
+            value={formData.endereco}
+            onChange={handleChange}
+          />
+        </div>
+        <div>
+          <label htmlFor="telefone">Telefone:</label>
+          <input
+            type="text"
+            id="telefone"
+            name="telefone"
+            value={formData.telefone}
+            onChange={handleChange}
+          />
+        </div>
+        <div>
+          <label htmlFor="faculdade">Faculdade:</label>
+          <input
+            type="text"
+            id="faculdade"
+            name="faculdade"
+            value={formData.faculdade}
+            onChange={handleChange}
+          />
+        </div>
+        <div>
+          <label htmlFor="curso">Curso:</label>
+          <input
+            type="text"
+            id="curso"
+            name="curso"
+            value={formData.curso}
+            onChange={handleChange}
+          />
+        </div>
+        <div>
+          <label htmlFor="quantd">Quantidade de alunos:</label>
+          <input
+            type="text"
+            id="quantd"
+            name="quantd"
+            value={formData.quantd}
             onChange={handleChange}
           />
         </div>

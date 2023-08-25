@@ -19,7 +19,8 @@
     "react-scripts": "^5.0.1",
     "react-table": "^7.8.0",
     "react-transition-group": "^4.3.0",
-    "startbootstrap-sb-admin-2": "^3.3.7"
+    "startbootstrap-sb-admin-2": "^3.3.7",
+    "xlsx": "^0.18.5"
   },
   "scripts": {
     "start": "react-scripts start",

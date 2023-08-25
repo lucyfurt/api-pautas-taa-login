@@ -18,6 +18,7 @@ const FormEspetaculo = () => {
     descricao: ''
     
   });
+  const [submissionMessage, setSubmissionMessage] = useState('');
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -32,8 +33,10 @@ const FormEspetaculo = () => {
     
     try {
       const response = await axios.post('http://localhost:3007/api/v1/espetaculos/', formData);
-      console.log(response.data); // Assuming the server returns some data upon successful submission
+      setSubmissionMessage('Formulário enviado com sucesso!');
+      console.log(response.data);
     } catch (error) {
+      setSubmissionMessage('Erro ao submeter o formulário. Por favor, Tente novamente mais tarde!');
       console.error('Error submitting form:', error);
     }
   };
@@ -175,6 +178,7 @@ const FormEspetaculo = () => {
 
         <button type="submit" className="form-submit">Enviar</button>
       </form>
+      {submissionMessage && <p>{submissionMessage}</p>}
     </div>
   );
 };

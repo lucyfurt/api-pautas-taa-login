@@ -7,8 +7,7 @@ class App extends Component {
             <div className="app-container">
                 <div className="menu">
                     <ul>
-                        <li><a href="/login">Login</a></li>
-                        <li><a href="#">Contato</a></li>
+                        <li><a href="/login">Login - Acesso Restrito </a></li>
                     </ul>
                 </div>
                 <div className="body">
@@ -17,7 +16,7 @@ class App extends Component {
                         <a className="custom-button" href='/formEspetaculo'>
                             PEDIDO DE PAUTAS - SHOW/ESPETÁCULOS
                         </a>
-                        <a className="custom-button" href='#'>
+                        <a className="custom-button" href='/form'>
                             PEDIDO DE PAUTAS - FOTOGRAFIAS
                         </a>
                     </div>

@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt-nodejs');
 
-//Forma em que o usuário deverá ser criado
 const UsuarioSchema = new mongoose.Schema({
   username: {
     type: String
@@ -21,7 +20,7 @@ const UsuarioSchema = new mongoose.Schema({
 });
 
 //Cria um hash para cada senha criada
-UsuarioSchema.pre('save', function(next) {
+UsuarioSchema.pre('save', function (next) {
   const user = this;
   if (!user.isModified('password')) return next();
   bcrypt.genSalt(5, (err, salt) => {
@@ -35,7 +34,7 @@ UsuarioSchema.pre('save', function(next) {
 });
 
 //Verifica se a senha é válida
-UsuarioSchema.methods.verificarSenha = function(password, next) {
+UsuarioSchema.methods.verificarSenha = function (password, next) {
   bcrypt.compare(password, this.password, (err, isMatch) => {
     if (err) return next(err);
     next(isMatch);
