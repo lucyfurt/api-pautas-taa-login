@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-
+import './formEspetaculo.css'
 const Form = () => {
   const [formData, setFormData] = useState({
     nome: '',
@@ -34,11 +34,11 @@ const Form = () => {
   };
 
   return (
-    <div>
-      <h2>Formulário - Fotografias</h2>
+    <div className="form-container">
+      <h2 className="form-heading">Formulário - Fotografias</h2>
       <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="nome">Nome:</label>
+        <div className="form-group">
+          <label htmlFor="nome" className="form-label">Nome:</label>
           <input
             type="text"
             id="nome"
@@ -48,7 +48,7 @@ const Form = () => {
           />
         </div>
         <div>
-          <label htmlFor="email">Email:</label>
+          <label htmlFor="email" className="form-label">Email:</label>
           <input
             type="email"
             id="email"
@@ -58,7 +58,7 @@ const Form = () => {
           />
         </div>
         <div>
-          <label htmlFor="cpf">CPF:</label>
+          <label htmlFor="cpf" className="form-label">CPF:</label>
           <input
             type="text"
             id="cpf"
@@ -68,7 +68,7 @@ const Form = () => {
           />
         </div>
         <div>
-          <label htmlFor="rg">RG:</label>
+          <label htmlFor="rg" className="form-label">RG:</label>
           <input
             type="text"
             id="rg"
@@ -78,7 +78,7 @@ const Form = () => {
           />
         </div>
         <div>
-          <label htmlFor="endereco">Endereço:</label>
+          <label htmlFor="endereco" className="form-label">Endereço:</label>
           <input
             type="text"
             id="endereco"
@@ -88,7 +88,7 @@ const Form = () => {
           />
         </div>
         <div>
-          <label htmlFor="telefone">Telefone:</label>
+          <label htmlFor="telefone" className="form-label">Telefone:</label>
           <input
             type="text"
             id="telefone"
@@ -98,7 +98,7 @@ const Form = () => {
           />
         </div>
         <div>
-          <label htmlFor="faculdade">Faculdade:</label>
+          <label htmlFor="faculdade" className="form-label">Faculdade:</label>
           <input
             type="text"
             id="faculdade"
@@ -108,7 +108,7 @@ const Form = () => {
           />
         </div>
         <div>
-          <label htmlFor="curso">Curso:</label>
+          <label htmlFor="curso" className="form-label">Curso:</label>
           <input
             type="text"
             id="curso"
@@ -118,7 +118,7 @@ const Form = () => {
           />
         </div>
         <div>
-          <label htmlFor="quantd">Quantidade de alunos:</label>
+          <label htmlFor="quantd" className="form-label">Quantidade de alunos:</label>
           <input
             type="text"
             id="quantd"
@@ -127,7 +127,7 @@ const Form = () => {
             onChange={handleChange}
           />
         </div>
-        <button type="submit">Submit</button>
+        <button type="submit" className="form-submit">Submit</button>
       </form>
     </div>
   );
