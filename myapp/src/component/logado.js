@@ -4,6 +4,8 @@ import Logo from '../temp/logo';
 import Espetaculos from './dataEspetaculos';
 import Fotografias from './dataFotografias';
 import './login.css';
+
+
 export default class Logado extends Component {
   constructor(props) {
     super(props);

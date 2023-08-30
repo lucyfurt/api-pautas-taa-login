@@ -5,7 +5,7 @@ import { Switch, Route, Redirect, BrowserRouter } from 'react-router-dom';
 import Login from '../component/login';
 import Cadastrar from '../component/cadastrar';
 import Logado from '../component/logado';
-import Form from '../component/form';
+import Form from '../component/formFotografia';
 import FormEspetaculo from '../component/formEspetaculo';
 import Home from '../component/Home'
 
