@@ -13,6 +13,7 @@ const Form = () => {
     curso: '',
     quant: '',
   });
+  const [submissionMessage, setSubmissionMessage] = useState('');
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -24,11 +25,13 @@ const Form = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
+
     try {
       const response = await axios.post('http://localhost:3007/api/v1/fotografias/', formData);
-      console.log(response.data); 
+      setSubmissionMessage('Formulário enviado com sucesso!');
+      console.log(response.data);
     } catch (error) {
+      setSubmissionMessage('Erro ao submeter o formulário. Por favor, Tente novamente mais tarde!');
       console.error('Error submitting form:', error);
     }
   };
@@ -127,8 +130,9 @@ const Form = () => {
             onChange={handleChange}
           />
         </div>
-        <button type="submit" className="form-submit">Submit</button>
+        <button type="submit" className="form-submit">Enviar</button>
       </form>
+      {submissionMessage && <p>{submissionMessage}</p>}
     </div>
   );
 };
