@@ -61,7 +61,7 @@ function App() {
   const handleExportCSV = () => {
     const csvData = convertToCSV(fotografias);
     const blob = new Blob([csvData], { type: 'text/csv;charset=utf-8;' });
-    saveAs(blob, 'espetaculos.csv');
+    saveAs(blob, 'fotografias.csv');
   }; 
 
   return (
