@@ -77,9 +77,7 @@ export default class Logado extends Component {
             </ul>
           </div>
           <div className="text-center">
-            <h1>Solicitações de Pautas:</h1>
-            <p>Bem vindo ao sistema de pautas!</p>
-            {/* Render the data based on the active tab */}
+
             {activeTab === 'espetaculos' && (
               <Espetaculos data={espetaculosData} />
             )}
