@@ -57,11 +57,10 @@ export default class Logado extends Component {
     if (token !== null) {
       return (
         <div>
-          <button className="btn btn-primary mb-2" onClick={this.handleLogout}>
-            Sair
-          </button>
+         
           <div className="menu">
             <ul>
+
               <li>
                 <a href="#" onClick={this.fetchEspetaculosData}>
                   Pedido Pautas - Shows/Espetáculos
@@ -72,10 +71,14 @@ export default class Logado extends Component {
                   Pedido Pautas - Fotografias
                 </a>
               </li>
+              <li> <button className="btn btn-primary mb-2" onClick={this.handleLogout}>
+            Sair
+          </button></li>
             </ul>
           </div>
           <div className="text-center">
             <h1>Solicitações de Pautas:</h1>
+            <p>Bem vindo ao sistema de pautas!</p>
             {/* Render the data based on the active tab */}
             {activeTab === 'espetaculos' && (
               <Espetaculos data={espetaculosData} />

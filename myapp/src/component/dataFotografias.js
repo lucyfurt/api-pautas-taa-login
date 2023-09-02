@@ -67,7 +67,7 @@ function App() {
   return (
     <div className="App">
       <h1>Fotografias</h1>
-      <button onClick={() => handleExportCSV()}>Baixar pedidos fotografias</button>
+      <button className="btn btn-primary mb-2" onClick={() => handleExportCSV()}>Baixar pedidos fotografias</button>
 
       <table>
         <thead>
@@ -97,7 +97,7 @@ function App() {
               <td>{fotografia.curso}</td>
               <td>{fotografia.quantd}</td>            
               <td>
-                <button onClick={() => deleteFotografia(fotografia._id)}>Delete</button>
+                <button className="btn btn-primary mb-2" onClick={() => deleteFotografia(fotografia._id)}>Delete</button>
               </td>
             </tr>
           ))}
