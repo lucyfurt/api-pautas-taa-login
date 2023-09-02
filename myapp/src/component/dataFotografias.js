@@ -29,7 +29,7 @@ function App() {
       console.log('Response:', response);
   
       if (response.status === 200) {
-        setFotografias();
+        fetchFotografias();
       }
     } catch (error) {
       console.error('Error deleting fotografia:', error);
